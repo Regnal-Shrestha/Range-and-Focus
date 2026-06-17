@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Range & Focus | The Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vault_styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#">
+      <span class="brand-mark">R&F</span>
+      <span class="brand-name">Range & Focus</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#journey">How it works</a>
+      <a href="#vault">The Vault</a>
+      <a href="#research">Research</a>
+      <a href="#cart">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Limited edition fine art photography</p>
+        <h1>The Vault</h1>
+        <p class="lede">Rare Range & Focus prints released in small batches, rooted in trail stories, built for collectors, and designed with a clearer e-commerce path.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#vault">View current release</a>
+          <a class="button secondary" href="#journey">See the journey</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Featured vault release">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Mountain landscape at sunset" />
+        <div class="release-tag">Edition 2 of 5</div>
+      </div>
+    </section>
+
+    <section id="research" class="research-banner">
+      <div>
+        <p class="eyebrow">Design validation</p>
+        <h2>Research before auction-first decisions</h2>
+      </div>
+      <p>This prototype treats the auction as a testable collector feature, not a blind assumption. The page includes trust cues, a clear bid flow, and traditional purchase details so users understand what happens next.</p>
+    </section>
+
+    <section id="journey" class="journey section-pad">
+      <p class="eyebrow">User journey</p>
+      <h2>How customers arrive at The Vault</h2>
+      <div class="journey-grid">
+        <article><span>01</span><h3>Trail material</h3><p>A hiker receives a small card or sticker with a QR code after meeting the photographer on trail.</p></article>
+        <article><span>02</span><h3>Mobile discovery</h3><p>The user visits the website on mobile and saves a Vault print to their watchlist.</p></article>
+        <article><span>03</span><h3>Retargeting</h3><p>Social and email reminders bring the customer back before the auction closes.</p></article>
+        <article><span>04</span><h3>Desktop decision</h3><p>The customer reviews size, frame, liner, price, bidding rules, and payment details before placing a bid.</p></article>
+      </div>
+    </section>
+
+    <section id="vault" class="product section-pad">
+      <div class="gallery-panel">
+        <img class="main-art" id="mainArt" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80" alt="Vault print preview showing a mountain valley" />
+        <div class="thumb-row" aria-label="Artwork preview images">
+          <button class="thumb active" data-img="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80">Artwork</button>
+          <button class="thumb" data-img="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80">Room</button>
+          <button class="thumb" data-img="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1400&q=80">Detail</button>
+        </div>
+      </div>
+
+      <aside class="purchase-panel" aria-label="Vault product purchase panel">
+        <p class="eyebrow">Vault release</p>
+        <h2>Alpine Memory</h2>
+        <p class="story">Captured after a long ridge climb, this print is designed to reconnect collectors with the wild places they remember and the trails still calling them back.</p>
+
+        <div class="status-grid">
+          <div><strong>Current bid</strong><span id="currentBid">$1,850</span></div>
+          <div><strong>Closes in</strong><span id="timer">02d 04h 12m</span></div>
+          <div><strong>Edition</strong><span>2 / 5</span></div>
+        </div>
+
+        <form id="vaultForm">
+          <fieldset>
+            <legend>1. Choose size</legend>
+            <label><input type="radio" name="size" value="24 x 36" data-price="0" checked> 24 × 36 in</label>
+            <label><input type="radio" name="size" value="30 x 45" data-price="350"> 30 × 45 in +$350</label>
+            <label><input type="radio" name="size" value="40 x 60" data-price="900"> 40 × 60 in +$900</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Choose frame</legend>
+            <label><input type="radio" name="frame" value="Frameless mount" data-price="0" checked> Frameless mount</label>
+            <label><input type="radio" name="frame" value="Walnut frame" data-price="240"> Walnut frame +$240</label>
+            <label><input type="radio" name="frame" value="Black wood frame" data-price="220"> Black wood frame +$220</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Choose liner</legend>
+            <label><input type="radio" name="liner" value="No liner" data-price="0" checked> No liner</label>
+            <label><input type="radio" name="liner" value="Limestone liner" data-price="95"> Limestone liner +$95</label>
+            <label><input type="radio" name="liner" value="Mesa liner" data-price="95"> Mesa liner +$95</label>
+          </fieldset>
+
+          <div class="bid-box">
+            <label for="bidAmount">4. Place bid</label>
+            <input id="bidAmount" type="number" min="1900" value="1900" step="25" />
+            <p class="helper">A valid card is required before bidding to protect auction integrity. This prototype uses a mock hold only.</p>
+            <label class="check"><input id="cardCheck" type="checkbox"> I understand a payment method is required if I win.</label>
+          </div>
+
+          <div class="summary" id="summary">
+            Estimated configured value: <strong>$1,850</strong>
+          </div>
+
+          <button class="button primary full" type="submit">Review bid</button>
+          <button class="button secondary full" type="button" id="watchBtn">Add to watchlist</button>
+        </form>
+      </aside>
+    </section>
+
+    <section id="cart" class="cart section-pad" aria-live="polite">
+      <p class="eyebrow">Bid review</p>
+      <h2>Your Vault review</h2>
+      <div id="cartContent" class="empty-cart">No bid reviewed yet.</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Range & Focus | Goods for home & trail</p>
+    <p>Prototype for mid-fidelity critique. No real bids are placed.</p>
+  </footer>
+
+  <script src="vault_script.js"></script>
+</body>
+</html>
